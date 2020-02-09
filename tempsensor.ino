@@ -8,7 +8,7 @@ void setup() {
   Serial.begin(9600);
 }
 
-float temp_in_Farenheit(R1, ThermistorPin) {
+float temp_in_Farenheit(float R1, int ThermistorPin) {
   Vo = analogRead(ThermistorPin);
   R2 = R1 * (1023.0 / (float)Vo - 1.0); //calculate resistance on thermistor
   logR2 = log(R2);
