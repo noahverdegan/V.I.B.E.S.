@@ -1,4 +1,6 @@
 int ThermistorPin = A0;
+int LightPin = A1;
+int WaterPin = A2;
 int Vo;
 float R1 = 10000; // value of R1 on board
 float logR2, R2, T;
@@ -25,9 +27,13 @@ void loop() {
   Serial.print(T);
   Serial.println(" F");
 
-  float light = analogRead(A1);
-  Serial.print("light: ");
+  float light = analogRead(LightPin);
+  Serial.print("Light: ");
   Serial.println(light);
+  
+  float water = analogRead(WaterPin);
+  Serial.print("Water: ");
+  Serial.println(water);
 
   delay(500);
 }
