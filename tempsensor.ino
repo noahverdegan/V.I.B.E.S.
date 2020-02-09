@@ -8,17 +8,22 @@ void setup() {
   Serial.begin(9600);
 }
 
-void loop() {
+float temp_in_Farenheit(R1, ThermistorPin) {
   Vo = analogRead(ThermistorPin);
   R2 = R1 * (1023.0 / (float)Vo - 1.0); //calculate resistance on thermistor
   logR2 = log(R2);
   T = (1.0 / (c1 + c2*logR2 + c3*logR2*logR2*logR2)); // temperature in Kelvin
   T = T - 273.15; //convert Kelvin to Celcius
   T = (T * 9.0)/ 5.0 + 32.0; //convert Celcius to Farenheit
+  return T;
+}
 
-  Serial.print("Temperature: "); 
+void loop() {
+  T = temp_in_Farenheit(R1, ThermistorPin); //convert Celcius to Farenheit
+
+  Serial.print("Temperature: ");
   Serial.print(T);
-  Serial.println(" F"); 
+  Serial.println(" F");
 
   float light = analogRead(A1);
   Serial.print("light: ");
