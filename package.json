@@ -1,0 +1,23 @@
+{
+  "name": "v.i.b.e.s.",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node-red": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noahverdegan/V.I.B.E.S..git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noahverdegan/V.I.B.E.S./issues"
+  },
+  "homepage": "https://github.com/noahverdegan/V.I.B.E.S.#readme"
+}
