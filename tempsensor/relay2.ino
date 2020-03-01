@@ -7,7 +7,7 @@ int moistPin = A0;
 
 long waterDelay = 60000;
 long lastWatered = 0-waterDelay;
-int wateringTime = 2000;
+int wateringTime = 1000;
 
 void setup() {
   pinMode(relay, OUTPUT);
