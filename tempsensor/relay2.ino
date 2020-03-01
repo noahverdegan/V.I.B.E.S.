@@ -11,7 +11,7 @@ int wateringTime = 1000;
 
 void setup() {
   pinMode(relay, OUTPUT);
-  digitalWrite(relay, LOW);
+  digitalWrite(relay, HIGH);
   Serial.begin(9600);
 }
 
@@ -21,15 +21,15 @@ void loop() {
   Serial.print("moist val: ");
   Serial.println(moistVal);
 
-  if(millis()-lastWatered > waterDelay && moistVal < 70){
+  if(millis()-lastWatered > waterDelay && moistVal < 50){
     water();
   }
   delay(500);
 }
 
 void water(){
-  digitalWrite(relay, HIGH);
+  digitalWrite(relay, LOW);
   delay(wateringTime);
   lastWatered = millis();
-  digitalWrite(relay, LOW);
+  digitalWrite(relay, HIGH);
 }
